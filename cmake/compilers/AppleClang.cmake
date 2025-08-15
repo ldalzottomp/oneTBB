@@ -38,7 +38,7 @@ else()
     set(_tbb_target_architectures "${CMAKE_SYSTEM_PROCESSOR}")
 endif()
 if ("${_tbb_target_architectures}" MATCHES "(x86_64|amd64|AMD64)") # OSX systems are 64-bit only
-    set(TBB_COMMON_COMPILE_FLAGS ${TBB_COMMON_COMPILE_FLAGS} -mrtm $<$<NOT:$<VERSION_LESS:${CMAKE_CXX_COMPILER_VERSION},12.0>>:-mwaitpkg>)
+    # set(TBB_COMMON_COMPILE_FLAGS ${TBB_COMMON_COMPILE_FLAGS} -mrtm $<$<NOT:$<VERSION_LESS:${CMAKE_CXX_COMPILER_VERSION},12.0>>:-mwaitpkg>)
 endif()
 unset(_tbb_target_architectures)
 
